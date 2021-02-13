@@ -1,0 +1,238 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/firebaseReadData.js"></script>
+    <script src="js/app1.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Details</title>
+    <link rel="stylesheet" href="css/icons/foundation-icons.css">
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/app.css">
+    <style>
+      .spacer{height:500px;}
+    </style>
+    <style>
+      #map {
+        width: 100%;
+        height: 400px;
+        background-color: grey;
+      }
+      #div{
+        height: 1000px;
+        width: 1000px;
+      }
+    </style>
+    
+    
+  </head>
+  <body onload="viewDetails()">
+
+    <!--TOP BAR-->
+    <div class="top-bar">
+      <div class="columns medium-2">
+        <h4 id = "propertyTitle"></h4>
+      </div>
+      <div class="columns medium-2" class="menu-text">        
+        <ul class="menu vertical">
+          <li><a href = "#overview">OVERVIEW</a></li>
+        </ul>
+      </div>
+      <div class="columns medium-2">        
+        <ul class="menu vertical">
+          <li><a href = "#plan">PLANS</a></li>
+        </ul>
+      </div>
+      <div class="columns medium-2">
+        <ul class="menu vertical">        
+          <li><a href = "#location">LOCATION</a></li>
+        </ul>
+      </div>
+      <div class="columns medium-2">
+        <ul class="menu vertical">         
+          <li><a href="#amenities">AMENITIES</a></li>
+        </ul>
+      </div>
+      <div class="columns medium-2">
+        <ul class="menu vertical">        
+          <li><a href = "">SPECIFICATIONS</a></li>
+        </ul>
+      </div>
+    </div>
+
+    
+
+      <div class = "row" style="width: 1000px" style="height: 500px">
+        <h1></h1>
+        <img id="propertySrc" src="./images/propertyId1.jpg">
+      </div>
+
+      <div id = "overview" class="row" style="width: 1000px" style="height: 1000px">
+        <h1></h1>
+        <p>
+          <h3>OVERVIEW</h3>
+        </p>
+         <p id="overviewParameter">
+          </p>
+      </div>
+    
+      <div id = "plan" class="row" style="width: 1000px">
+        <p>
+          <h3>FLOOR PLAN</h3>
+        </p>
+        <table id = "plan" class="striped hover stack table-scroll" style="width: 1000px" align="Centre">
+          <tr>
+            <th>Type</th>
+            <th>Area (Sq. Ft.)</th>
+            <th>Rate Per Sq. Ft.</th>
+            <th>Total Price</th>
+          </tr>
+          <tr>
+            <td id = "type">
+            </td>
+            <td id = "area">
+            </td>
+            <td id = "rate">
+            </td>
+            <td id = "total">
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div id = "location" class="row" style="width: 1000px">
+        <p>
+          <h3>LOCATION DETAILS</h3>
+        </p>
+        <div class="columns medium-2">
+          <img src="./images/google-maps.jpg">
+        </div>
+        <div class="columns medium-10">
+          <div id="map">
+            <script async defer
+              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJSz4L64WE1g9WPfp43Pb_hKgokne0FsY&callback=initMap">
+            </script>
+          </div>
+        </div>
+
+        
+      </div>
+
+      <div id = "amenities" class="row" style="width: 1000px">
+        <p>
+          <h3>AMENITIES</h3>
+        </p>
+        <div  id  = "24-Hour-Water-Supply" class="columns medium-2" class="card" style="width: 200px">
+          <img src="./images/24-Hour-Water-Supply.jpg" align="Centre">
+          <div class="card-section">
+            24 Hour Water Supply
+          </div>
+        </div>
+        <div  class="columns medium-2" class="card" style="width: 200px">
+          <img src="./images/24-Hours-Security.jpg" align="Centre">
+          <div class="card-section">
+            24 Hour Security
+          </div>
+        </div>
+        <div   class="columns medium-2" class="card" style="width: 200px">
+          <img src="./images/Club-House.jpg" align="Centre">
+          <div class="card-section">
+            Club House
+          </div>
+        </div>
+        <div  class="columns medium-2" class="card" style="width: 200px">
+          <img src="./images/Firefighting-Equipment.jpg" align="Centre">
+          <div class="card-section">
+            Firefighting Equipment
+          </div>
+        </div>
+      <div  class="columns medium-2" class="card" style="width: 200px">
+        <img src="./images/Kids-Play-Area.jpg" align="Centre">
+          <div class="card-section">
+            Kid's Play Area
+          </div>
+        </div>
+
+    </div>
+
+
+    <div class="row" style="width: 1000px">
+        <div class="columns medium-2" class="card" style="width: 200px">
+          <img src="./images/Wi-fi-Conectivity.jpg" align="Centre">
+          <div class="card-section">
+            Wifi Connectivity
+          </div>
+        </div>
+        <div  class="columns medium-2" class="card" style="width: 200px">
+          <img src="./images/Meditation-Center.jpg" align="Centre">
+          <div class="card-section">
+            Meditation Center
+          </div>
+        </div>
+        <div   class="columns medium-2" class="card" style="width: 200px">
+          <img src="./images/senior-citizen-park.jpg" align="Centre">
+          <div class="card-section">
+            Senior Citizen Park
+          </div>
+        </div>
+        <div  class="columns medium-2" class="card" style="width: 200px">
+          <img src="./images/Power-Backup.jpg" align="Centre">
+          <div class="card-section">
+            Power Backup
+          </div>
+        </div>
+      <div  class="columns medium-2" class="card" style="width: 200px">
+        <img src="./images/joggingAmenities.jpg" align="Centre">
+          <div class="card-section">
+            Jogging Amenities
+          </div>
+        </div>
+
+    </div>
+    
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/what-input.js"></script>
+    <script src="js/vendor/foundation.js"></script>
+    <!-- <script src="js/app.js"></script> -->
+
+<!-- radio button option-->
+      <button class="button" style="position: relative;left:25%;width: 50%" onclick='window.location.href="chainOfCustody.html"'>Get Chain of Custody</button>
+      <br><br>
+      <div class="row">
+      <div class="medium-6 medium-centered columns">
+        <div class="medium-12 medium-centered column">
+        <fieldset>
+          <input type="radio" onclick="setupBuy()" name="action" value="buy" id="buy_radio"><label for="buy_radio">Buy Property</label>
+          <input type="radio" onclick="setupLease()" name="action" value="rent" id="rent_radio"><label for="rent_radio">Rent Property</label>
+        </fieldset>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="medium-6 medium-centered columns" id="container">
+        <div class="medium-12 column" id="text_fields">
+          
+        </div>
+        <div id="time">
+        </div>
+        <div id="button_container" class="medium-12 column">
+        </div>
+      </div>
+    </div>
+    
+    <div class="spacer"></div>
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!--<script src="js/jquery.js"></script>-->
+    <script src="js/foundation.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    
+
+  </body>
+</html>

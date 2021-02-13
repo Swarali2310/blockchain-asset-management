@@ -1,0 +1,1 @@
+geth --port 3000 --networkid 1 --datadir blockchain/ --maxpeers=5 --rpc --rpcport 8545 --rpcaddr 192.168.43.253 --rpccorsdomain "*" --rpcapi "eth,net,web3" console
